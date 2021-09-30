@@ -129,8 +129,6 @@ const View = ({ type, data, position = -6.5 }) => {
 
   useFrame(() => (groupRef.current.rotation.y = position));
 
-  useEffect(() => {}, []);
-
   return (
     <group ref={groupRef}>
       {Object.values(nodes).map((node, index) => {
@@ -140,7 +138,6 @@ const View = ({ type, data, position = -6.5 }) => {
         let isColor = "silver";
 
         let isEqual = data.find((items) => items.name === node.name);
-
         if (node.name === isEqual?.name) {
           isVisible = isEqual.visible;
           isMaterial = isEqual.material ? materials[isEqual.name] : isMaterial;
@@ -168,7 +165,6 @@ const View = ({ type, data, position = -6.5 }) => {
 };
 
 const Builder = ({ directInsensity, ambientInsensity, type, data }) => {
-  console.log(232);
   return type ? (
     <Canvas style={{ display: "flex", height: "100vh" }}>
       <directionalLight intensity={directInsensity} />
