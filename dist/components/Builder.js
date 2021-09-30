@@ -181,7 +181,6 @@ const View = _ref3 => {
   } = (0, _drei.useGLTF)(type);
   const [rotation, setRotation] = (0, _react.useState)(true);
   (0, _fiber.useFrame)(() => groupRef.current.rotation.y = position);
-  (0, _react.useEffect)(() => {}, []);
   return /*#__PURE__*/_react.default.createElement("group", {
     ref: groupRef
   }, Object.values(nodes).map((node, index) => {
@@ -220,7 +219,6 @@ const Builder = _ref4 => {
     type,
     data
   } = _ref4;
-  console.log(232);
   return type ? /*#__PURE__*/_react.default.createElement(_fiber.Canvas, {
     style: {
       display: "flex",
